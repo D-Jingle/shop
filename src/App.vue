@@ -1,29 +1,54 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view></router-view>
+
+    <van-tabbar v-model="active">
+      <van-tabbar-item icon="home" to="/">首页</van-tabbar-item>
+      <van-tabbar-item icon="records" to="/category">分类</van-tabbar-item>
+      <van-tabbar-item icon="cart" to="/cart">购物车</van-tabbar-item>
+      <van-tabbar-item icon="contact" to="/profile">我的</van-tabbar-item>
+    </van-tabbar>
+
+
+    <!--<ul class="footer-bar">-->
+      <!--<li class="footer-bar-item">-->
+        <!--<router-link to="/">首页</router-link>-->
+      <!--</li>-->
+      <!--<li class="footer-bar-item">-->
+        <!--<router-link to="/category">分类</router-link>-->
+      <!--</li>-->
+      <!--<li class="footer-bar-item">-->
+        <!--<router-link to="/cart">购物车</router-link>-->
+      <!--</li>-->
+      <!--<li class="footer-bar-item">-->
+        <!--<router-link to="/profile">我的</router-link>-->
+      <!--</li>-->
+    <!--</ul>-->
   </div>
 </template>
 
+<script>
+  export default {
+      data(){
+          return {
+              active: 0
+          }
+      }
+  }
+</script>
+
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+  .footer-bar{
+    display: flex;
+    background: #eeeeee;
+    position: fixed;
+    bottom: 0;
+    width: 100%;  /*fixed 会拖例文档流，宽度要设置成100%*/
+    height: 1rem;
+    line-height: 1rem;
+    &-item{
+      flex-grow: 1;
+      text-align: center;
     }
   }
-}
 </style>
