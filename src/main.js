@@ -6,9 +6,10 @@ import './registerServiceWorker'
 import '@/assets/css/reset.css'
 import '@/assets/js/rem.js'
 
+import '@/mock/mock.js'
+
 // import Vant from 'vant';
 // import 'vant/lib/index.css';
-//
 // Vue.use(Vant);
 
 import {NavBar , Button , Icon , Tabbar , TabbarItem} from 'vant';
